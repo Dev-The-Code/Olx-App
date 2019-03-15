@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Online Buying or Selling</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Bootstrap qes -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+    <!-- Customize styles -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- font awesome styles -->
+    <!-- <link href="assets/font-awesome/font-awesome.min.css" rel="stylesheet"> -->
+
+    <!-- Favicons -->
+    <!-- <link rel="shortcut icon" href="assets/ico/favicon.ico"> -->
+
+    <link rel="manifest" href="manifest.json">
+
+
+
+    <!-- Firebase libraries -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDSJRERtDglhl0Q7uUXlYLrHeF7jdvZjyg",
+            authDomain: "hackathon-bdffa.firebaseapp.com",
+            databaseURL: "https://hackathon-bdffa.firebaseio.com",
+            projectId: "hackathon-bdffa",
+            storageBucket: "hackathon-bdffa.appspot.com",
+            messagingSenderId: "468663877156"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+</head>
+
+<body onload="justForHidden()">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="topNav">
+            <div class="container">
+                <div class="alignR">
+                    <a href="myaccount.html" id="userAccount">
+                        <span class="icon-user"></span> My Account</a>
+                    <a href="register.html" id="registers">
+                        <span class="icon-edit"></span> Free Register </a>
+                    <a href="login.html" id="login">
+                        <span class="icon-lock"></span> Login
+                        <b class="caret"></b>
+                    </a>
+                    <a href="#" id="logOut" onclick="signoutUser()">
+                        <span class="icon glyphicon glyphicon-log-out"></span> Log Out
+                        <b class="caret"></b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+
+        <!-- <header id="header">
+            <div class="row">
+                <div class="span4">
+                    <h3>
+                        <a href="index.html">
+
+                            <img src="assets/img/olx-logo.png" alt="olx-logo">
+                        </a>
+                        <div>
+                            <span class="pull-right">Pakistan's Largest Marketplace</span>
+                        </div>
+                    </h3>
+                </div>
+
+            </div>
+        </header> -->
+        <div class="contPar">
+
+
+            <div class="boox col-lg-2 col-md-3  col-xs-4" id="home">
+                <div class="iconB">
+                    <a href="index.html">
+                        <img src="assets/img/homelogo.png">
+                    </a>
+                    <p style="color: #df8012;">Home</p>
+                </div>
+            </div>
+
+            <div class="boox col-lg-2 col-md-3  col-xs-4" id="chat">
+                <div class="iconB">
+                    <a href="chat.html">
+                        <img src="assets/img/chat.png">
+                    </a>
+                    <p style="color: #070c1f;">Chat</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+        <div class="container catbtn" onclick="catd()">
+            <p>Categories
+                <img src="../img/dropdown.png">
+            </p>
+        </div>
+        <div class="container pad" id="catDiv">
+            <div class="row" id="roww">
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('mobile')">
+                    <div class="iconB">
+                        <img src="../img/logo/mobileLogo.png">
+                        <p style="color: #dd0908;">Mobiles</p>
+                    </div>
+                </div>
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('vehicle')">
+                    <div class="iconB">
+                        <img src="../img/logo/vehicleLogo.png">
+                        <p style="color: #3fb7d2;">Vehicles</p>
+                    </div>
+                </div>
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('bike')">
+                    <div class="iconB">
+                        <img src="../img/logo/bikeLogo.png">
+                        <p style="color: #15c01c;">Bikes</p>
+                    </div>
+                </div>
+                
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('kid')">
+                    <div class="iconB">
+                        <img src="../img/logo/kidLogo.png">
+                        <p style="color: #1ca39d;">Kids</p>
+                    </div>
+                </div>
+
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('pet')">
+                    <div class="iconB">
+                        <img src="../img/logo/petLogo.png">
+                        <p style="color: #1963ce;">Pets</p>
+                    </div>
+                </div>
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('furniture')">
+                    <div class="iconB">
+                        <img src="../img/logo/furnitureLogo.png">
+                        <p style="color: #7e3b07;">Furnitures</p>
+                    </div>
+                </div>
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('book')">
+                    <div class="iconB">
+                        <img src="../img/logo/bookLogo.png">
+                        <p style="color: #c119ce;">Books</p>
+                    </div>
+                </div>
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('electronic')">
+                    <div class="iconB">
+                        <img src="../img/logo/electronicLogo.png">
+                        <p style="color: #ff9e29;">Electronics</p>
+                    </div>
+                </div>
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('fashion')">
+                    <div class="iconB">
+                        <img src="../img/logo/fashionLogo.png">
+                        <p style="color: #7fbad8;">Fashion</p>
+                    </div>
+                </div>
+                <div class="boox col-lg-2 col-md-3  col-xs-4" onclick="page('other')">
+                    <div class="iconB">
+                        <img src="../img/logo/otherLogo.png">
+                        <p style="color: #f49ecf;">Others</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ -->
+
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

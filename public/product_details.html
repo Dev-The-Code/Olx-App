@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Online Buying or Selling</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+
+	<!-- Bootstrap styles -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+
+	<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+	<!-- Customize styles -->
+	<link href="assets/css/style.css" rel="stylesheet" />
+
+	<!-- font awesome styles -->
+	<!-- <link href="assets/font-awesome/font-awesome.min.css" rel="stylesheet"> -->
+
+	<!-- Favicons -->
+	<!-- <link rel="shortcut icon" href="assets/ico/favicon.ico"> -->
+
+	<link rel="manifest" href="manifest.json">
+
+
+
+	<!-- Firebase libraries -->
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyDSJRERtDglhl0Q7uUXlYLrHeF7jdvZjyg",
+			authDomain: "hackathon-bdffa.firebaseapp.com",
+			databaseURL: "https://hackathon-bdffa.firebaseio.com",
+			projectId: "hackathon-bdffa",
+			storageBucket: "hackathon-bdffa.appspot.com",
+			messagingSenderId: "468663877156"
+		};
+		firebase.initializeApp(config);
+	</script>
+
+
+</head>
+
+<body onload="productDetails()">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="topNav">
+			<div class="container">
+				<div class="alignR">
+					<a href="myaccount.html" id="userAccount">
+						<span class="icon-user"></span> My Account</a>
+					<a href="register.html" id="registers">
+						<span class="icon-edit"></span> Free Register </a>
+					<a href="login.html" id="login">
+						<span class="icon-lock"></span> Login
+						<b class="caret"></b>
+					</a>
+					<a href="#" id="logOut" onclick="signoutUser()">
+						<span class="icon glyphicon glyphicon-log-out"></span> Log Out
+						<b class="caret"></b>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--
+		Lower Header Section 
+		-->
+	<div class="container">
+		<header id="header">
+			<div class="row">
+				<div class="span4">
+					<h3>
+						<a href="index.html">
+
+							<img src="assets/img/olx-logo.png" alt="olx-logo">
+						</a>
+						<div>
+							<span class="pull-right">Pakistan's Largest Marketplace</span>
+						</div>
+					</h3>
+				</div>
+
+			</div>
+		</header>
+
+		<!--
+		Navigation Bar Section 
+		-->
+
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container">
+					<div class="nav-collapse">
+						<ul class="nav">
+							<li>
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="addFav.html">Fav Ads</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" onclick="chat()">Messages</a>
+							</li>
+						</ul>
+						<div class="navbar-search pull-left">
+							<input type="search" align="left" class="form-control fa fa-caret-down" id="searchText" placeholder="Search Ads/Categories"
+							 required>
+						</div>
+						<button class="btn" onclick="searchData()">Search</button>
+						<ul class="nav pull-right">
+							<li>
+								<a id="postNewAdLink" class="postnewlink fbold tdnone" href="createAd.html">
+									<span>Submit a Free Ad</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="span9">
+			<ul class="breadcrumb">
+				<li>
+					<a href="index.html">Home</a>
+					<span class="divider">/</span>
+				</li>
+				<!-- <li>
+					<a href="products.html">Items</a>
+					<span class="divider">/</span>
+				</li> -->
+				<li class="active">Preview</li>
+
+			</ul>
+
+			<div class="well well-small" id="single-add">
+			</div>
+		</div>
+	</div>
+
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/app.js"></script>
+</body>
+
+</html>
