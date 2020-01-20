@@ -285,16 +285,16 @@ function productDetails() {
 				<tr class="techSpecRow"><td class="techSpecTD1">Phone No:</td><td class="techSpecTD2">${categoriesData[key].phone}</td></tr>
 				<tr class="techSpecRow"><td class="techSpecTD1">City:</td><td class="techSpecTD2">${categoriesData[key].city}</td></tr>
 				<tr class="techSpecRow"><td class="techSpecTD1">Address:</td><td class="techSpecTD2">${categoriesData[key].address}</td></tr>
-                <tr class="techSpecRow"><td class="techSpecTD1">Brand:</td><td class="techSpecTD2">${categoriesData[key].brand}</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Model:</td><td class="techSpecTD2">${categoriesData[key].model}</td></tr>
-                <tr class="techSpecRow"><td class="techSpecTD1">Year:</td><td class="techSpecTD2">${categoriesData[key].year}</td></tr>
 				</tbody>
                 </table>
                 <h5>Description:<h5>
 				<p>${categoriesData[key].description}</p>
 			    </div>`;
-                }
             }
+        }
+        // <tr class="techSpecRow"><td class="techSpecTD1">Brand:</td><td class="techSpecTD2">${categoriesData[key].brand}</td></tr>
+        // <tr class="techSpecRow"><td class="techSpecTD1">Model:</td><td class="techSpecTD2">${categoriesData[key].model}</td></tr>
+        // <tr class="techSpecRow"><td class="techSpecTD1">Year:</td><td class="techSpecTD2">${categoriesData[key].year}</td></tr>
         }
     });
     justForHidden();
