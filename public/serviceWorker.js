@@ -16,7 +16,7 @@ var filesToCache = [
     'assets/css/bootstrap-responsive.min.css',
     'assets/img/chat.png',
     'assets/img/homelogo.png',
-    'assets/img/olx-logo.png',
+    'assets/img/original-logo.png',
     'assets/img/send.png',
     'assets/img/white_leather.png',
     'assets/js/app.js',

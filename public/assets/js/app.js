@@ -23,11 +23,16 @@ function signup() {
     auth.createUserWithEmailAndPassword(emailRef.value, passwordRef.value)
         .then((success) => {
             db.ref(`users/${success.user.uid}/`).set(userObject);
-            // location = './signin.html'
+            location = './index.html';
+            emailRef.value = "";
+            phoneRef.value = "";
+            nameRef.value = "";
         })
         .catch((error) => {
             console.error('something went wrong', error);
         })
+
+
 }
 
 //Just for login
@@ -36,7 +41,6 @@ function login() {
     auth.signInWithEmailAndPassword(emailRef.value, passwordRef.value)
         .then((success) => {
             localStorage.setItem("currentUserUid", success.user.uid);
-
 
             const messaging = firebase.messaging();
             messaging.requestPermission().then(function () {
@@ -49,6 +53,8 @@ function login() {
                 }
                 db.ref(`users/${success.user.uid}/`).push(userObject);
                 console.log('token >>>> ', token);
+                location = './index.html';
+
             }).catch(function (err) { // Happen if user deney permission
                 console.log('Unable to get permission to notify.', err);
             });
@@ -101,15 +107,15 @@ function createAd() {
 
     var submitAnAd = {
         title: titleRef.value,
-        categories: categoriesRef.value,
+        // categories: categoriesRef.value,
         description: descriptionRef.value,
         name: nameRef.value,
         phone: phoneRef.value,
         address: addressRef.value,
         city: cityRef.value,
-        model: modelRef.value,
-        year: yearRef.value,
-        brand: brandRef.value,
+        // model: modelRef.value,
+        // year: yearRef.value,
+        // brand: brandRef.value,
         price: priceRef.value
     }
 
@@ -135,16 +141,16 @@ function createAd() {
     db.ref(`categories/${submitAnAd.categories}/${currentUid}/`).push(submitAnAd);
 
     titleRef.value = "";
-    categoriesRef.value = "";
-    descriptionRef.value = "";
+    // categoriesRef.value = "";
+    // descriptionRef.value = "";
     imgRef.value = "";
     nameRef.value = "";
     phoneRef.value = "";
     addressRef.value = "";
     cityRef.value = "";
-    modelRef.value = "";
-    yearRef.value = "";
-    brandRef.value = "";
+    // modelRef.value = "";
+    // yearRef.value = "";
+    // brandRef.value = "";
     priceRef.value = "";
 }
 
